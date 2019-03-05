@@ -1,6 +1,6 @@
 {
   "name": "withoutwax-resume",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Will's Resume",
   "main": "index.js",
   "scripts": {
