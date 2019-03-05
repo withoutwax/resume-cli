@@ -1,11 +1,26 @@
 {
-    "Education": [
-        "Kuwait English School",
-        "School of the Art Institute of Chicago"
-    ],
+    "Education": 
+        {
+            "Kuwait English School": 
+                [
+                    "Kuwait English School (2000~2012)",
+                    "====",
+                    "During the early 2000s, Will spent in total of 12 years studying his high school curriculum at Kuwait English School.",
+                    "The School was actually known famous for high achievements in Academia, especially preparing students to get ready for IGCSEs, AS and A Levels.", 
+                    "Will studied in the school showing interests in the field of creative works, especially Art, Design and Music but also in the study of logics, for example, Mathematics.",
+                    "Will Graduated KES at Summer 2012 where he decided to go to Chicago for his college, as an Architecture Major."
+                ],
+            "School of the Art Institute of Chicago": 
+                [
+                    "SAIC detail 01",
+                    "SAIC detail 02",
+                    "SAIC detail 03"
+                ]
+        }
+    ,
     "Past Experience": [
-        "NVISIA",
-        "Legion Collective"
+        "Legion Collective",
+        "NVISIA"
     ],
     "Tech Stack": ["HTML", "CSS", "JavaScript", "Python"],
     "Projects": ["Coming Soon"],

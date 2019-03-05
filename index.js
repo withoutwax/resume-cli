@@ -1,11 +1,9 @@
-#!/usr/bin/env node
-
 "use strict";
 
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 
-let response = chalk.bold.green;
+let chalkGreen = chalk.bold.green;
 let resume = require("./resume.json");
 
 let resumePrompts = {
@@ -15,38 +13,42 @@ let resumePrompts = {
     choices: [...Object.keys(resume), "Exit"]
 };
 
-function main() {
+module.exports = () => {
     console.log("Hello, My name is Will and welcome to my resume");
-    resumeHandler();
-}
-
-function resumeHandler() {
+    
     inquirer.prompt(resumePrompts).then(answer => {
-        if (answer.resumeOptions == "Exit") {
-            return;
+        switch (answer.resumeOptions) {
+            case 'Exit':
+                return;
+                break;
+            case 'Education':
+                require('./answer/education')(answer.resumeOptions);
+                break;
         }
 
-        let option = answer.resumeOptions;
-        console.log(response("--------------------------------------"));
+        // // DISPLAY INFO ================================
+        // let option = answer.resumeOptions;
+        // console.log(chalkGreen("--------------------------------------"));
+        // resume[`${option}`].forEach(info => {
+        //     console.log(chalkGreen("|    => " + info));
+        // });
+        // console.log(chalkGreen("--------------------------------------"));
 
-        resume[`${option}`].forEach(info => {
-            console.log(response("|    => " + info));
-        });
-        console.log(response("--------------------------------------"));
+        // GO BACK OR EXIT ================================
+        // inquirer.prompt({
+        //     type: "list",
+        //     name: "exitBack",
+        //     message: "Go back or Exit?",
+        //     choices: ["Back", "Exit"]
+        // }).then(choice => {
+        //     if (choice.exitBack == "Back") {
+        //         resumeHandler();
+        //     } else {
+        //         return;
+        //     }
+        // });
+        
 
-        inquirer.prompt({
-            type: "list",
-            name: "exitBack",
-            message: "Go back or Exit?",
-            choices: ["Back", "Exit"]
-        }).then(choice => {
-            if (choice.exitBack == "Back") {
-                resumeHandler();
-            } else {
-                return;
-            }
-        });
+
     });
 }
-
-main();
