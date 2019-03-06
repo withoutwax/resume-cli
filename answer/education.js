@@ -8,18 +8,15 @@ module.exports = async (option) => {
 
     let education = resume[option];
 
+    // SCHOOL LISTS ================================
     console.log(chalkGreen("--------------------------------------"));
-
     for (let key in education) {
         console.log(chalkGreen("|    ∙ " + key));
     }
-
-    // console.log(resume[`${option}`]);
-    // resume[`${option}`].forEach(school => {
-    //     console.log(chalkGreen("|    ∙ " + school));
-    // });
     console.log(chalkGreen("--------------------------------------"));
 
+
+    // SEE DETAILS ================================
     inquirer.prompt({
         type: "list",
         name: "educationDetail",
